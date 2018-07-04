@@ -1,0 +1,52 @@
+.input-label {
+  font-size: 15px;
+  color: #787878;
+  font-weight: 200;
+}
+
+.remove-padding {
+   padding-right: 0px;
+   padding-left: 0px;
+}
+
+.div-top {
+  margin-top: 20px;
+}
+
+.form-control[readonly]{
+  background-color: #f7f7f7;
+}
+.form-control[disabled]{
+  cursor: auto;
+  background-color: #f7f7f7;
+}
+
+.mensagem-campo {
+  font-size: 13px;
+  color: #787878;
+  line-height: 150%;
+  margin-top: -5px;
+}
+
+.mensagem-celular {
+  font-size: 13px;
+  color: #787878;
+  line-height: 150%;
+}
+
+@media (min-width: 1000px) {
+  .input-label{
+    font-size: 18px;
+  }
+
+  .div-top{
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 1450px) {
+
+  .input-label{
+    font-size: 20px;
+  }
+}

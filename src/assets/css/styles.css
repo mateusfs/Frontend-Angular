@@ -1,0 +1,288 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face{
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+
+@font-face{
+  font-family: "Open Sans Bold";
+  src: url(../fonts/OpenSans-Bold.ttf);
+}
+
+
+@font-face{
+  font-family: "Open Sans Semi-Bold";
+  src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+strong{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: #f0f0f0;
+  margin-bottom: 60px;
+  padding-bottom: 120px;
+}
+
+.clear{
+  clear: both;
+}
+
+.left{
+  float: left;
+}
+
+.center{
+  margin: auto;
+  text-align: center;
+}
+
+.right{
+  float: right;
+}
+
+.button-proximo{
+  background-color: #00468F;
+  border-color: #00468F;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 50px;
+  border-radius: 0px;
+  color: white;
+}
+
+.button-proximo.focus, .button-proximo:focus, .button-proximo:hover , .button-proximo::after, .button-proximo::before {
+  color: white;
+  background-color: #00468F;
+  border-color: #00468F;
+}
+
+.button-voltar {
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-radius: 0px;
+  color: black;
+  margin-top: 20px;
+  border: 0px;
+}
+
+.top-20{
+  margin-top: 20px;
+}
+
+.button-voltar.focus, .button-voltar:focus, .button-voltar:hover , .button-voltar::after, .button-voltar::before {
+  color: black;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+span.obrigatorio{
+  font-size: 15px;
+  color: #787878;
+  margin: 5px;
+  position: relative;
+  top: 0px;
+}
+
+.input-text{
+  font-size: 16px;
+  border-radius: 0px;
+  /* border: 1px solid #FFFFFF; */
+}
+
+.input-text:focus {
+  outline: none;
+  border: 0px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
+
+.ui-inputtext {
+  font-size: 16px !important;
+  border-radius: 0px !important;
+}
+
+.price > .form-group > .input-text > .ui-inputtext {
+  width: 150px !important;
+}
+
+.ui-inputtext.ui-state-focus, .ui-inputtext:focus {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3) !important;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3) !important;
+}
+
+.classErro {
+  box-shadow: 0px 0px 10px 0px #DB4437 !important;
+}
+
+.classWarning {
+  box-shadow: 0px 0px 10px 0px #F4B400 !important;
+}
+
+.titulo-processo {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.titulo-processo-text{
+  color: #00468F;
+  font-size: 30px;
+  text-align: left;
+  line-height: 30px;
+}
+
+::placeholder {
+  font-style: italic;
+  font-size: 12px;
+}
+
+:-ms-input-placeholder{
+  font-style: italic;
+  font-size: 12px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 850px) {
+
+  body {
+    padding-bottom: 90px;
+  }
+
+  ::placeholder {
+    font-size: 14px;
+  }
+
+  :-ms-input-placeholder {
+    font-size: 14px;
+  }
+  
+  .titulo-processo-text {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .button-proximo {
+    min-width: 160px;
+  }
+
+  .button-voltar {
+    min-width: 180px;
+  }
+
+  .input-text {
+    font-size: 18px;
+    height: 35px;
+  }
+
+  .ui-inputtext {
+    font-size: 18px !important;
+    height: 35px !important;
+  }
+}
+
+@media (min-width: 1000px) {
+
+  .button-proximo {
+    min-width: 170px;
+  }
+
+  .button-voltar {
+    min-width: 205px;
+  }
+
+  span.obrigatorio {
+    top: -8px;
+  }
+
+  .input-text {
+    font-size: 20px;
+    height: 40px;
+  }
+
+  .ui-inputtext {
+    font-size: 20px !important;
+    height: 40px !important;
+  }
+}
+
+@media (min-width: 1250px) {
+  ::placeholder {
+    font-size: 16px;
+  }
+
+  :-ms-input-placeholder {
+    font-size: 16px;
+  }
+
+  .button-voltar {
+    min-width: 205px;
+  }
+  
+}
+
+@media (min-width: 1450px) {
+  .input-text {
+    font-size: 20px;
+  }
+}
+
+/*!
+ * Copyright (C) 2016 Sergey Akopkokhyants
+ * This project is licensed under the terms of the MIT license.
+ * https://github.com/akserg/ng2-slim-loading-bar
+ */
+
+
+/* Styling for the Slim Loading Progress Bar container */
+.slim-loading-bar {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
+
+/* Styling for the Slim Loading Progress Bar itself */
+.slim-loading-bar-progress {
+  margin: 0;
+  padding: 0;
+  z-index: 99998;
+  background-color: #00C873;
+  color: #00C873;
+  box-shadow: 0 0 10px 0; /* Inherits the font color */
+  height: 2px;
+  opacity: 0;
+
+  /* Add CSS3 styles for transition smoothing */
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+
+.swal2-confirm {
+  background-color: #094D8F;
+}
+
+.swal-text, .swal-footer {
+  text-align: center;
+}

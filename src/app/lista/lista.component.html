@@ -1,0 +1,57 @@
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="425"></p-confirmDialog>
+
+<div class="clear"></div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="titulo-processo">
+    <span class="titulo-processo-text">Listagem</span>
+  </div>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome do Item</th>
+          <th>Unidade</th>
+          <th>Quantidade</th>
+          <th>Preço</th>
+          <th>Perecível</th>
+          <th>Validade</th>
+          <th>Fabricação</th>
+          <th>Editar</th>
+          <th>Remover</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="itens">
+        <tr *ngFor="let item of itens">
+          <th scope="row">1</th>
+          <td>{{ item.nome }}</td>
+          <td>
+            {{ (item.unidade == 'U')?'Unidade':''}} {{(item.unidade == 'Q')?'Quilograma':''}} {{(item.unidade == 'L')?'Litro':'' }}
+          </td>
+          <td>{{ item.qtd }}</td>
+          <td>{{ item.preco }}</td>
+          <td>{{ (item.perecivel)?'Sim':'Não' }}</td>
+          <td>{{ item.validade }}</td>
+          <td>{{ item.fabricado }}</td>
+          <td class="center">
+            <span class="glyphicon glyphicon-pencil" (click)="editar(item)"></span>
+          </td>
+          <td class="center">
+            <span class="glyphicon glyphicon-remove" (click)="remover(item)"></span>
+          </td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="itens.length == 0">
+        <tr>
+          <td colspan="8">Listagem não contêm itens cadastrados!</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <button type="submit" class="btn button-proximo pull-right" [routerLink]="['/inicio']">Novo Item</button>
+</div>

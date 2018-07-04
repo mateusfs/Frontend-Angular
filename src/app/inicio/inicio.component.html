@@ -1,0 +1,78 @@
+<div class="clear"></div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="titulo-processo">
+        <span class="titulo-processo-text">Cadastro</span>
+    </div>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+
+    <div class="form-group col-md-6 col-sm-5 col-xs-12">
+        <label class="input-label" for="nome">Item</label>
+        <span class="obrigatorio">*</span>
+        <input type="text" class="form-control input-text {{ nomeClasse }}" max="50" [(ngModel)]="item.nome" (keypress)="somenteLetras($event)"
+            placeholder="{{ nomePlaceholder }}" required>
+    </div>
+
+    <div class="form-group col-md-3 col-sm-5 col-xs-12">
+        <label class="input-label" for="cpf">Unidade de medida</label>
+        <span class="obrigatorio">* </span>
+        <select class="form-control input-text {{ unidadeClasse }}" [(ngModel)]="item.unidade">
+            <option name="unidade" value="U" [selected]="item.unidade == 'U' ">Unidade</option>
+            <option name="litro" value="L" [selected]="item.unidade == 'L' ">Litro</option>
+            <option name="quilograma" value="Q" [selected]="item.unidade == 'Q' ">Quilograma</option>
+        </select>
+    </div>
+
+    <div class="form-group col-md-3 col-sm-5 col-xs-12">
+        <label class="input-label">Quantidade</label>
+        <div class="form-group">
+            <p-inputMask *ngIf="item.unidade == 'L'" [(ngModel)]="isQuantidade" class="input-text {{ qtdClasse }}" mask="999,999 lt"></p-inputMask>
+            <p-inputMask *ngIf="item.unidade == 'Q'" [(ngModel)]="isQuantidade" class="input-text {{ qtdClasse }}" mask="999,999 kg"></p-inputMask>
+            <p-inputMask *ngIf="item.unidade == 'U'" [(ngModel)]="isQuantidade" class="input-text {{ qtdClasse }}" mask="999 ut"></p-inputMask>
+        </div>
+    </div>
+
+    <div class="form-group col-md-3 col-sm-5 col-xs-12 price">
+        <label class="input-label" for="rg">Preço</label>
+        <span class="obrigatorio">*</span>
+        <div class="form-group">
+            <p-inputMask [(ngModel)]="item.preco" class="input-text {{ precoClasse }}" mask="$ 9,99"></p-inputMask>
+        </div>
+    </div>
+
+    <div class="form-group col-md-3 col-sm-12 col-xs-12">
+        <label class="input-label" for="org">Produto perecível</label>
+        <span class="obrigatorio">*</span>
+        <br/>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-primary" [ngClass]="{'active': isPerecivel}">
+                <input type="radio" (click)="tooglePerecivel($event)" id="sim" autocomplete="on"> Sim
+            </label>
+            <label class="btn btn-primary" [ngClass]="{'active': !isPerecivel}">
+                <input type="radio" (click)="tooglePerecivel($event)" id="nao" autocomplete="off"> Não
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group col-md-3 col-sm-4 col-xs-12">
+        <label class="input-label" for="data_nascimento">Data de validade</label>
+        <span class="obrigatorio" *ngIf="isPerecivel">*</span>
+        <input type="tel" class="form-control input-text {{ validadeClasse }}" [(ngModel)]="item.validade" [textMask]="{mask: date_mask}"
+            placeholder="{{ validadePlaceholder }}" required>
+    </div>
+
+    <div class="form-group col-md-3 col-sm-4 col-xs-12">
+        <label class="input-label" for="celular">Data de fabricação</label>
+        <span class="obrigatorio">*</span>
+        <input type="tel" class="form-control input-text {{ fabricadoClasse }}" [(ngModel)]="item.fabricado" [textMask]="{mask: date_mask}"
+            placeholder="{{ fabricadoPlaceholder }}" required>
+    </div>
+
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12 top-20">
+    <button type="submit" class="btn button-voltar pull-left" *ngIf="item.nome || item.preco || item.qtd" (click)="cancelar()">Cancelar</button>
+    <button type="submit" class="btn button-proximo pull-right" (click)="salvar()">Salvar</button>
+</div>

@@ -1,0 +1,28 @@
+
+.cabecalho{
+  background-color: #094D8F;
+  height: 60px;
+  min-width: 280px;
+}
+
+.logo{
+  margin-top: 10px;
+  width: 50px;
+}
+
+@media (min-width: 950px) {
+  .logo{
+    width: auto;
+  }
+
+  .logo{
+    margin-top: 15px;
+    width: 70px;
+  }
+
+  .cabecalho{
+    background-color: #094D8F;
+    height: 80px;
+    min-width: 280px;
+  }
+}
