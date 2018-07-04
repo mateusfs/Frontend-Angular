@@ -1,6 +1,59 @@
-# ProcessoSeletivo
+# Frontend-Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.4.
+
+## Getting Started
+
+Uma aplicação web para realizar o cadastro de itens.
+
+Campo Tipo Obrigatoriedade Validação
+Nome do item Texto Sim Tamanho máximo de 50 caracteres
+(somente letras)
+Unidade de medida Enumeração * Sim -
+Quantidade Numérico Não Varia conforme regra da unidade
+medida **
+Preço Monetário Sim Validações de campo monetário***
+Produto perecível Checkbox booleano Sim -
+Data de validade Data Só é obrigatório
+caso o produto seja
+perecível
+Data no formato pt-Br. Caso a data
+de validade seja inferior a data atual
+deve informar que o produto
+encontra-se vencido.
+Data de fabricação Data Sim Data no formato pt-Br e não pode
+ser superior a data de validade
+(caso seja um produto perecível)
+* Enumeração contendo os seguintes valores: Litro, Quilograma, Unidade.
+** Regra da unidade de medida:
+- Campos com unidade de medida em litro deve permitir somente números, com até 3 casas decimais e apresentar a
+abreviatura “lt” ao final do campo (addon);
+- Campos com unidade de medida em Quilograma deve permitir somente números, com até 3 casas decimais e
+apresentar a abreviatura “kg” ao final do campo (addon);
+- Campos com unidade de medida em Unidade deve permitir somente números inteiros e apresentar a abreviatura “un”
+ao final do campo (addon);
+*** Validação de campo monetário incluí exibição do tipo de moeda no início do campo e limite de casas decimais
+utilizando máscara (preenchimento da direita para esquerda).
+
+Tecnologias e conceitos que serão avaliados:
+• Angular 2 + (caso necessário pode ser realizado com Angular JS);
+• HTML 5;
+• CSS;
+• TypeScript / JavaScript;
+• Rotas;
+• Utilização de LocalStorage;
+• Recomenda-se a utilização da biblioteca PrimeNG.
+Critérios de avaliação da tela:
+• Usabilidade e experiência de uso;
+• Responsividade (deve ser ajustável a diferentes tamanhos de tela);
+• Padrão visual;
+• Cross-browser (deve ser utilizavel em ie 10 +, Edge, Chrome, FireFox)
+Critério de avaliação do código:
+• Qualidade;
+• Clareza;
+• Documentação;
+• Reutilização (criação de componentes);
+
 
 ## Development server
 
