@@ -55,6 +55,10 @@ Critério de avaliação do código:
 • Reutilização (criação de componentes);
 
 
+## Install server
+
+Run `npm install` for a dev install for depences of the source files.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
