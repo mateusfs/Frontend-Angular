@@ -160,6 +160,10 @@ export class InicioComponent implements OnInit {
       this.validadePlaceholder = 'Data de validade';
     }
 
+    if (this.formulario.status === 'VALID') {
+      this.validaFormulario = true;
+    }
+
     if (this.validaDataMinima(this.item.fabricado)) {
       this.validaFormulario = false;
     }
@@ -173,10 +177,6 @@ export class InicioComponent implements OnInit {
 
     if (this.formulario.status === 'INVALID') {
       this.validaFormulario = false;
-    }
-
-    if (this.formulario.status === 'VALID') {
-      this.validaFormulario = true;
     }
 
     if (this.validaFormulario) {
